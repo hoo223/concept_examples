@@ -23,7 +23,7 @@ def intersecting_point_on_circle(center, radius, p1):
     # Calculate the coordinates of the intersection points if the line formed by p1 and the center of the circle intersects the circle
     if d >= radius:
         v = normalize_vector(center, p1)
-        return v * radius + centor
+        return v * radius + center
     
     # If the line formed by p1 and the center of the circle does not intersect the circle, return None
     else:
