@@ -17,15 +17,13 @@ def normalize_vector(sp, ep):
 
 def intersecting_point_on_circle(center, radius, p1):
     # Calculate the distance between the center of the circle and p1
-    dx = p1[0] - center[0]
-    dy = p1[1] - center[1]
     d = np.linalg.norm(np.array(center)- np.array(p1))
     print(d)
     
     # Calculate the coordinates of the intersection points if the line formed by p1 and the center of the circle intersects the circle
     if d >= radius:
         v = normalize_vector(center, p1)
-        return v * radius
+        return v * radius + centor
     
     # If the line formed by p1 and the center of the circle does not intersect the circle, return None
     else:
@@ -33,7 +31,7 @@ def intersecting_point_on_circle(center, radius, p1):
     
 def get_midpoint(p1, p2):
     # Calculate the average of the x and y coordinates of p1 and p2
-    return [(p1[i] + p2[i]) / 2 for i in range(len(p1))]
+    return [(p1[i] + p2[i]) / 2.0 for i in range(len(p1))]
 
 def visualize_sphere_line(center, radius, p1, p2):
     fig = plt.figure()
